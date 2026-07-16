@@ -1,6 +1,7 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.nikhilbhima/tabula",
+  "title": "Tabula",
   "description": "Cross-AI personal memory. Save once in ChatGPT, recall in Claude, Mistral, Grok, or any MCP client.",
   "status": "active",
   "websiteUrl": "https://www.tabula360.com",
@@ -8,7 +9,19 @@
     "url": "https://github.com/nikhilbhima/tabula-mcp",
     "source": "github"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "icons": [
+    {
+      "src": "https://www.tabula360.com/icons/icon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    },
+    {
+      "src": "https://www.tabula360.com/apple-touch-icon.png",
+      "mimeType": "image/png",
+      "sizes": ["180x180"]
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",
