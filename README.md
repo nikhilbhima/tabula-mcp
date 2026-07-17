@@ -118,6 +118,10 @@ type = "static"
 api_key_env = "TABULA_MCP_TOKEN"
 ```
 
+### Your own code (OpenRouter or any OpenAI-compatible API)
+
+Give a plain API script persistent memory with the standard tool-calling loop. A complete single-file example lives in [`examples/openrouter-memory`](examples/openrouter-memory): it fetches Tabula's tools over MCP, hands them to the model, and executes the calls.
+
 ## Privacy
 
 Memories are isolated per account with row-level security, and never sold or shared. You can view, edit, export, or delete everything at any time. [Privacy policy](https://www.tabula360.com/privacy).
