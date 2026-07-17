@@ -122,6 +122,18 @@ api_key_env = "TABULA_MCP_TOKEN"
 
 Give a plain API script persistent memory with the standard tool-calling loop. A complete single-file example lives in [`examples/openrouter-memory`](examples/openrouter-memory): it fetches Tabula's tools over MCP, hands them to the model, and executes the calls.
 
+## What to expect
+
+Asking always works: say "Save that to Tabula" or "Ask Tabula" and any model will call the right tool. Fully automatic saving and recall depends on the model and the client, because MCP offers tools, it cannot force a call.
+
+To make recall automatic in clients with a system prompt or custom instructions, add this line:
+
+```text
+Always check Tabula before answering anything about me, my work, or my projects, even if you think you already know.
+```
+
+The [guide](https://www.tabula360.com/guide) has the per-platform version of this for ChatGPT, Claude, Mistral, and the rest.
+
 ## Privacy
 
 Memories are isolated per account with row-level security, and never sold or shared. You can view, edit, export, or delete everything at any time. [Privacy policy](https://www.tabula360.com/privacy).

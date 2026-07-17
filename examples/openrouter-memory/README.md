@@ -28,5 +28,7 @@ Change `MODEL` with an env var (default `openai/gpt-4o-mini`). `OPENROUTER_BASE_
 
 ## Notes
 
+- The save and recall behavior comes from `SYSTEM_PROMPT` in the file. That is why this script recalls without being asked. Edit it to make the model more or less eager with memory.
+
 - Memories saved here show up in the user's Tabula dashboard, and in their ChatGPT, Claude, and every other connected AI. That's the point.
 - The five tools: `save_memory`, `search_memory`, `list_memories`, `update_memory`, `delete_memory`. Their schemas come from the server at runtime, so this example never goes stale.
