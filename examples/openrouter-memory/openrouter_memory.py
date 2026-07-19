@@ -103,8 +103,12 @@ def chat(prompt):
             json={"model": MODEL, "messages": messages, "tools": tools},
             timeout=120,
         )
-        r.raise_for_status()
-        message = r.json()["choices"][0]["message"]
+        if r.status_code != 200:
+            sys.exit(f"OpenRouter HTTP {r.status_code}: {r.text[:300]}")
+        body = r.json()
+        if "error" in body:  # OpenRouter reports provider errors in a 200 body
+            sys.exit(f"OpenRouter error: {json.dumps(body['error'])}")
+        message = body["choices"][0]["message"]
         messages.append(message)
 
         if not message.get("tool_calls"):
